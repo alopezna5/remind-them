@@ -1,4 +1,4 @@
-from .config.TargetPerson import TargetPerson
+from config.TargetPerson import TargetPerson
 from datetime import date
 
 N_DAYS_FREQUENCY = int(30)
