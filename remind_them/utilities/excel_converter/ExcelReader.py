@@ -29,9 +29,13 @@ class ExcelReader():
         workbook = Workbook(self.excel_path)
         worksheet = workbook.add_worksheet()
         # Store the read information
+        worksheet.write(0, self.name[1], self.name[0])
+        worksheet.write(0, self.relevance[1], self.relevance[0])
+        worksheet.write(0, self.monthly_meetings[1], self.monthly_meetings[0])
+        worksheet.write(0, self.last_contact[1], self.last_contact[0])
         for i, row in enumerate(new_dict):
-            worksheet.write(i, self.name[1], row.name)
-            worksheet.write(i, self.relevance[1], row.relevance)
-            worksheet.write(i, self.monthly_meetings[1], row.nMonthlyMeetings)
-            worksheet.write(i, self.last_contact[1], row.lastContact.strftime("%d/%m/%Y"))
+            worksheet.write(i+1, self.name[1], row.name)
+            worksheet.write(i+1, self.relevance[1], row.relevance)
+            worksheet.write(i+1, self.monthly_meetings[1], row.nMonthlyMeetings)
+            worksheet.write(i+1, self.last_contact[1], row.lastContact.strftime("%d/%m/%Y"))
         workbook.close()

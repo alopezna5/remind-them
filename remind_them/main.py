@@ -6,7 +6,7 @@ from remind_them.utilities.telegram_connector.TelegramConnector import TelegramC
 
 
 def main():
-    excel = ExcelReader('/home/telugu/PycharmProjects/remind-them/data/targets.ods')
+    excel = ExcelReader('/home/telugu/PycharmProjects/remind-them/data/targets.xls')
     n_targets = excel.n_targets()
     raw_targets = excel.my_excel_to_dict()
     targets = FriendsReminder(raw_targets, n_targets)
